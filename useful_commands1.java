@@ -35,7 +35,7 @@ public class Selpracon_fb {
 
 	@After
 	public void tearDown() throws Exception {
-		driver.quit();
+		driver.quit();//close the browser
 	}
 
 	// is
