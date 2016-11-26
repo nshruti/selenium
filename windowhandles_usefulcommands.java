@@ -1,4 +1,4 @@
-	package testingpractice;
+	package windows;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -32,23 +32,23 @@ public class Selpracon_fb2 {
 	@Test
 	public void test() {
 		driver.get(baseUrl1);
-		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[1]/p/a")).click();// invokes
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[1]/p/a")).click();
 																							// child
 																							// window
-		System.out.println(driver.getTitle());// AFTER INVOKING CHILD WINDOW BUT
-												// WE STILL GET PARENT TITLE NOT
-												// CHILD
-		Set<String> ids = driver.getWindowHandles();// get all windows opened
-													// and their id
-		Iterator<String> it = ids.iterator();// for iteration with parent window
-												// and child window
+		System.out.println(driver.getTitle());
+			//  AFTER INVOKING CHILD WINDOW BUT WE STILL GET PARENT TITLE NOT CHILD
+												
+		Set<String> ids = driver.getWindowHandles();
+			// get all windows opened										
+		Iterator<String> it = ids.iterator();
+												
 		String parid = it.next();// it traverse to 1st window i.e; parent
 		String childid = it.next();// it traverse to 2nd window i.e; child
-		driver.switchTo().window(childid);// switching to child window bcoz we r
-											// passing childid
+		driver.switchTo().window(childid);// switching to child window
+											
 		System.out.println(driver.getTitle());
-		driver.switchTo().window(parid);// switching to parent window bcoz we r
-										// passing parid
+		driver.switchTo().window(parid);// switching to parent window 
+										
 		System.out.println(driver.getTitle());
 	}
 
